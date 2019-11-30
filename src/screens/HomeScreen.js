@@ -1,17 +1,27 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { Text, StyleSheet, View, Button } from 'react-native';
+//import EStyleSheet from 'react-native-extended-stylesheet'
 
-const HomeScreen = ({ navigation }) => {
-  return (
-    <View>
-      <Text style={{ fontSize: 30 }}>HomeScreen</Text>
-      <Button title="Layout" onPress={() => navigation.navigate('Layout')} />
-    </View>
-  );
+
+const HomeScreen = props => {
+  return <View>
+  <Text style={styles.text}>Offline Hub</Text>
+  <Button 
+    size = "large"
+    onPress={() => props.navigation.navigate('Components')}
+    title="Search Websites"
+    />
+  </View>
+
 };
 
-HomeScreen.navigationOptions = {
-  title: 'Home'
-};
+const styles = StyleSheet.create({
+  button: {
+    width: 600,
+    height: 60,
+    right: 20,
+    bottom: 20,
+  },
+});
 
 export default HomeScreen;
